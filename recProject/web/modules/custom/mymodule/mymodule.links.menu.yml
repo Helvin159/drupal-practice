@@ -4,3 +4,10 @@ mymodule.simplecontentpage:
   route_name: mymodule.simplecontent
   weight: 10
   menu_name: main
+
+rsvplist.formdemo:
+  title: RSVP List Demo
+  description: Link to RSVP List Demo
+  route_name: rsvplist.formdemo
+  weight: 10
+  menu_name: main

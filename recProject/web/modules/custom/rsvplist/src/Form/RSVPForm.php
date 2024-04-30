@@ -56,6 +56,17 @@
     return $form;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state){
+    $value = $form_state->getValue('email');
+    if( !(\Drupal::service('email.validator')->isValid($value)) ){
+      $form_state->setErrorByName('email',
+        $this->t("It appears that %mail is not a valid email. Please try again", ['%mail'=>$value]));
+    }
+  }
+
   /** 
    * {@inheritdoc} 
   */
